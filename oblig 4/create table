@@ -1,0 +1,15 @@
+
+CREATE TABLE Klasse (
+klassekode CHAR(4) NOT NULL,
+klassenavn VARCHAR(50) NOT NULL,
+studiumkode VARCHAR(50) NOT NULL,
+PRIMARY KEY (klassekode));
+
+CREATE TABLE Student (
+brukernavn VARCHAR(10) NOT NULL,
+fornavn VARCHAR(50) NOT NULL,
+etternavn VARCHAR(50) NOT NULL,
+klassekode CHAR(4) NOT NULL,
+PRIMARY KEY (brukernavn),
+FOREIGN KEY (klassekode) References Klasse(klassekode));
+
